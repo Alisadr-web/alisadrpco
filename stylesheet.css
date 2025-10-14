@@ -1,0 +1,281 @@
+:root {
+    --hz-purple: #4b2e83;
+    --hz-accent: #6a4bd6;
+    --muted: #6b7280;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --glass: rgba(255, 255, 255, 0.6);
+    --radius: 14px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: #0f172a
+}
+
+/* header */
+header.site-header {
+    background: linear-gradient(90deg, var(--hz-purple), var(--hz-accent));
+    color: white;
+    padding: 1.6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+header .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem
+}
+
+header .brand img {
+    height: 48px;
+    width: 48px;
+    border-radius: 8px;
+    object-fit: cover
+}
+
+header h1 {
+    color: whitesmoke;
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600
+}
+
+header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.95
+}
+
+/* nav */
+nav.primary {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.25rem
+}
+
+.nav-links a {
+    color: var(--glass);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600
+}
+
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.cta {
+    background: white;
+    color: var(--hz-purple);
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700
+}
+
+/* mobile toggle */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 1.1rem
+}
+
+/* layout */
+main {
+    max-width: 1100px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1.5rem;
+    align-items: start
+}
+
+@media (max-width:900px) {
+    main {
+        grid-template-columns: 1fr
+    }
+
+    .menu-toggle {
+        display: block
+    }
+
+    .nav-links {
+        display: none
+    }
+}
+
+/* hero card */
+.hero {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), var(--card));
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    display: flex;
+    gap: 1rem;
+    align-items: center
+}
+
+.avatar {
+    height: 108px;
+    width: 108px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0
+}
+
+.avatar img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+
+.hero h2 {
+    margin: 0 0 0.2rem 0
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted)
+}
+
+/* portfolio grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem
+}
+
+.card {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(11, 15, 30, 0.04)
+}
+
+/* goals & lists */
+.goals ul {
+    padding-left: 1rem
+}
+
+/* aside */
+aside {
+    position: relative
+}
+
+aside .links {
+    position: sticky;
+    top: 1.25rem
+}
+
+aside .links ul {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+aside .links a {
+    display: block;
+    padding: 0.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    background: linear-gradient(180deg, var(--card), #fafafa);
+    border: 1px solid rgba(10, 10, 10, 0.03);
+}
+
+/* footer */
+footer {
+    max-width: 1100px;
+    margin: 2rem auto 3rem;
+    padding: 1rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center
+}
+
+footer nav a {
+    margin-left: 0.6rem;
+    color: var(--muted);
+    text-decoration: none
+}
+
+/* small helpers */
+.muted {
+    color: var(--muted)
+}
+
+a {
+    color: var(--hz-purple)
+}
+
+/* accessible focus */
+a:focus,
+button:focus {
+    outline: 3px solid rgba(106, 75, 214, 0.18);
+    outline-offset: 3px
+}
+
+/* footer Copyright stack on small screens */
+@media (max-width:700px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start
+    }
+}
+
+.navbar {
+    background-color: #004c97;
+    /* HZ blue */
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    /* space between links */
+}
+
+
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.navbar a.active {
+    background-color: #ffcc00;
+    /* highlight active page */
+    color: black;
+    border-radius: 5px;
+}
